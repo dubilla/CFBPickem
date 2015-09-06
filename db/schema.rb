@@ -21,14 +21,14 @@ ActiveRecord::Schema.define(version: 20150906223308) do
   end
 
   create_table "players", force: :cascade do |t|
-    t.integer  "leagues_id"
-    t.integer  "users_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.integer  "league_id"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
-  add_index "players", ["leagues_id"], name: "index_players_on_leagues_id", using: :btree
-  add_index "players", ["users_id"], name: "index_players_on_users_id", using: :btree
+  add_index "players", ["league_id"], name: "index_players_on_league_id", using: :btree
+  add_index "players", ["user_id"], name: "index_players_on_user_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
