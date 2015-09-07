@@ -22,6 +22,13 @@ ActiveRecord::Schema.define(version: 20150907011314) do
 
   add_index "entries", ["player_id"], name: "index_entries_on_player_id", using: :btree
 
+  create_table "games", force: :cascade do |t|
+    t.integer "external_game_id"
+    t.boolean "neutral_site",     null: false
+    t.boolean "completed",        null: false
+    t.integer "spread"
+  end
+
   create_table "leagues", force: :cascade do |t|
     t.string "name"
   end
