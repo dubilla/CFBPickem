@@ -1,4 +1,5 @@
 class Pick < ActiveRecord::Base
   belongs_to :round_entry
-  has_one :game
+  belongs_to :game
+  belongs_to :opponent
 end
