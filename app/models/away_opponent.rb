@@ -1,0 +1,3 @@
+class AwayOpponent < Opponent
+
+end

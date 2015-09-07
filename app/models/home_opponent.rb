@@ -1,0 +1,3 @@
+class HomeOpponent < Opponent
+
+end
