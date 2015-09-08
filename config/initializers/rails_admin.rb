@@ -34,6 +34,7 @@ RailsAdmin.config do |config|
 
   config.model 'Game' do
     base do
+      field :round
       field :away_opponent
       field :home_opponent
       field :spread

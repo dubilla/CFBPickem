@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150908010828) do
+ActiveRecord::Schema.define(version: 20150908011521) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -29,7 +29,10 @@ ActiveRecord::Schema.define(version: 20150908010828) do
     t.float   "spread"
     t.integer "away_opponent_id"
     t.integer "home_opponent_id"
+    t.integer "round_id"
   end
+
+  add_index "games", ["round_id"], name: "index_games_on_round_id", using: :btree
 
   create_table "leagues", force: :cascade do |t|
     t.string "name"
