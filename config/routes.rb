@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
 
   resources :leagues do
-    resources :rounds
+    resources :rounds do
+      resources :round_entries
+    end
   end
 
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
