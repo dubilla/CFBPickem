@@ -1,1 +1,20 @@
 h1 #{@round_entry.entry.player.user.email} - #{@round_entry.round.name}
+
+table
+  thead
+    tr
+      th Away
+      th Home
+      th Spread
+      th Selection
+      th Completed
+      th Winner
+  tbody
+    - @round_entry.picks.each do |pick|
+      tr
+        td = pick.game.away_opponent.name
+        td = pick.game.home_opponent.name
+        td = pick.game.spread
+        td = pick.opponent.name
+        td = pick.game.completed
+        td = pick.winner
