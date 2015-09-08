@@ -31,4 +31,15 @@ RailsAdmin.config do |config|
     # history_index
     # history_show
   end
+
+  config.model 'Game' do
+    base do
+      field :away_opponent
+      field :home_opponent
+      field :spread
+      field :external_game_id
+      field :neutral_site
+      field :completed
+    end
+  end
 end
