@@ -11,25 +11,29 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150908011521) do
+ActiveRecord::Schema.define(version: 20150909033512) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "entries", force: :cascade do |t|
-    t.integer "player_id"
+    t.integer  "player_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   add_index "entries", ["player_id"], name: "index_entries_on_player_id", using: :btree
 
   create_table "games", force: :cascade do |t|
-    t.integer "external_game_id"
-    t.boolean "neutral_site",     null: false
-    t.boolean "completed",        null: false
-    t.float   "spread"
-    t.integer "away_opponent_id"
-    t.integer "home_opponent_id"
-    t.integer "round_id"
+    t.integer  "external_game_id"
+    t.boolean  "neutral_site",     null: false
+    t.boolean  "completed",        null: false
+    t.float    "spread"
+    t.integer  "away_opponent_id"
+    t.integer  "home_opponent_id"
+    t.integer  "round_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   add_index "games", ["round_id"], name: "index_games_on_round_id", using: :btree
@@ -48,10 +52,12 @@ ActiveRecord::Schema.define(version: 20150908011521) do
   end
 
   create_table "picks", force: :cascade do |t|
-    t.integer "round_entry_id"
-    t.boolean "winner",         null: false
-    t.integer "game_id"
-    t.integer "opponent_id"
+    t.integer  "round_entry_id"
+    t.boolean  "winner",         null: false
+    t.integer  "game_id"
+    t.integer  "opponent_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   add_index "picks", ["game_id"], name: "index_picks_on_game_id", using: :btree
