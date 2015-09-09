@@ -36,6 +36,7 @@ gem 'pg'
 gem 'devise'
 gem 'rails_admin'
 gem 'slim-rails'
+gem 'httparty'
 
 group :development, :test do
   gem 'pry'
